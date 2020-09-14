@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import Login from "./components/login/Login";
 import * as serviceWorker from "./serviceWorker";
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./components/store/reducers/rootReducer";
@@ -36,7 +36,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ReactReduxFirebaseProvider {...rrfProps}>
       <React.StrictMode>
-        <App />
+        <Login />
       </React.StrictMode>
     </ReactReduxFirebaseProvider>
   </Provider>,

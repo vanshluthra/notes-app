@@ -1,7 +1,12 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import firebase from "../../config/fbconfig";
 
 const Navbar = () => {
+  const handleLogout = () => {
+    firebase.auth().signOut();
+  };
+
   return (
     <nav className="green">
       <div className="nav-wrapper">
@@ -12,9 +17,9 @@ const Navbar = () => {
           <li>
             <NavLink to="/favorites">Favourites</NavLink>
           </li>
-          {/* <li>
-            <NavLink to="/login">login</NavLink>
-          </li> */}
+          <li>
+            <a onClick={handleLogout}>Sign out</a>
+          </li>
         </ul>
       </div>
     </nav>
