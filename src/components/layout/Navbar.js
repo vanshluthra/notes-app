@@ -12,6 +12,9 @@ const Navbar = () => {
           <li>
             <NavLink to="/favorites">Favourites</NavLink>
           </li>
+          {/* <li>
+            <NavLink to="/login">login</NavLink>
+          </li> */}
         </ul>
       </div>
     </nav>
