@@ -21,7 +21,7 @@ export const addNote = (note) => {
 };
 
 export const deleteNote = (note) => {
-  const uid = firebase.auth().currentUser.uid;
+  //const uid = firebase.auth().currentUser.uid;
   return (dispatch, getState, { getFirestore }) => {
     const firestore = getFirestore();
     firestore
