@@ -1,6 +1,8 @@
 import { getFirestore } from "redux-firestore";
+import firebase from '../../../config/fbconfig'
 
 export const addNote = (note) => {
+  const uid = firebase.auth().currentUser.uid;
   return (dispatch, getState, { getFirestore }) => {
     const firestore = getFirestore();
     firestore
@@ -9,6 +11,7 @@ export const addNote = (note) => {
         ...note,
         favorite: false,
         createdAt: new Date(),
+        userId: uid
       })
       .then(() => {
         console.log("Added the note successfully");
@@ -18,10 +21,11 @@ export const addNote = (note) => {
 };
 
 export const deleteNote = (note) => {
+  const uid = firebase.auth().currentUser.uid;
   return (dispatch, getState, { getFirestore }) => {
     const firestore = getFirestore();
     firestore
-      .collection("note")
+      .collection("note" )
       .doc(note.id)
       .delete()
       .then(() => {
