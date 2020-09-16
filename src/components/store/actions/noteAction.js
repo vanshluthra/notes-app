@@ -2,13 +2,12 @@ import { getFirestore } from "redux-firestore";
 import firebase from '../../../config/fbconfig'
 
 export const addNote = (note) => {
-  const uid = firebase.auth().currentUser.uid;
+  //const uid = firebase.auth().currentUser.uid;
   return (dispatch, getState, { getFirestore }) => {
     const firestore = getFirestore();
     firestore
       .collection("note")
       .add({
-        ...note,
         favorite: false,
         createdAt: new Date(),
         userId: uid

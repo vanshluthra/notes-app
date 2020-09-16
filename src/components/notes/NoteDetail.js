@@ -5,7 +5,7 @@ import moment from "moment";
 
 const NoteDetail = (props) => {
   const id = props.match.params.id;
-  useFirestoreConnect([{ collection: "note", doc: id }]);
+  useFirestoreConnect([{ collection: "note", doc: id,}]);
   const note = useSelector(
     ({ firestore: { data } }) => data.note && data.note[id]
   );
