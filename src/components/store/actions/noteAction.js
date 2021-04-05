@@ -9,8 +9,7 @@ export const addNote = (note) => {
       .collection("note")
       .add({
         favorite: false,
-        createdAt: new Date(),
-        userId: uid
+        createdAt: new Date()
       })
       .then(() => {
         console.log("Added the note successfully");
